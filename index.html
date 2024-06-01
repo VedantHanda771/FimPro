@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie App</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" href="#" onclick="goToHomePage()">FimPro</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item" id="homeNavItem">
+          <a class="nav-link active" href="#" onclick="goToHomePage()" id="homeLink">Home</a>
+        </li>
+        <li class="nav-item" id="searchNavItem">
+          <a class="nav-link" href="#" onclick="openSearchPage()">Search</a>
+        </li>
+        <li class="nav-item" id="topRatedNavItem">
+          <a class="nav-link" href="#" onclick="openTopRatedPage()">Top Rated</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Genre
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#" onclick="fetchMoviesByGenre(28, 'Action')">Action</a>
+            <a class="dropdown-item" href="#" onclick="fetchMoviesByGenre(35, 'Comedy')">Comedy</a>
+            <a class="dropdown-item" href="#" onclick="fetchMoviesByGenre(18, 'Drama')">Drama</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div id="content">
+    <!-- Content goes here -->
+    <div id="homePage">
+      <div class="container mt-4">
+        <h2 id="homePageHeading">Recommended Movies</h2>
+        <p id="homePageGenre"></p>
+        <div class="row" id="homeMovieContainer"></div>
+      </div>
+    </div>
+
+    <div id="searchPage" style="display:none;">
+      <div class="container">
+        <h2 id="searchPageHeading"></h2>
+        <form class="form-inline my-2 my-lg-0" onsubmit="return false;">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search for a movie" aria-label="Search" id="searchInput">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="button" onclick="searchMovies()">Search</button>
+        </form>
+        <div class="row mt-4" id="searchMovieContainer"></div>
+      </div>
+    </div>
+
+    <div id="topRatedPage" style="display:none;">
+      <div class="container mt-4">
+        <h2>Top Rated Movies</h2>
+        <div class="row" id="topRatedMovieContainer"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

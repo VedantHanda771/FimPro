@@ -20,5 +20,16 @@ body {
   position: sticky;
 
 }
+::-webkit-scrollbar{
+  background-color: transparent;
+  /* border: 2px solid gray; */
+  border-radius: 20px;
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: gray;
+  border-radius: 20px;
+}
 
 

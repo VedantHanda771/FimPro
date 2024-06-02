@@ -16,5 +16,9 @@ body {
   cursor: pointer;
 }
 
+.navbar{
+  position: sticky;
+
+}
 
 
